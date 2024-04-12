@@ -1,14 +1,16 @@
-import numpy as np #pip install numpy
-import matplotlib.pyplot as plt #pip install matplotlib
-import skfuzzy as fuzz # pip install scikit-fuzzy
+import numpy as np
+import matplotlib.pyplot as plt
+import skfuzzy as fuzz
 from funciones_pertenencia import macro_tuneles
 from funciones_pertenencia import invernadero
 from funciones_pertenencia import agua_sustratos
 import reglas
 
+
 def calcular_universo_discurso(func_pertenencia):
     valores = [valor for lista_valores in func_pertenencia.values() for valor in lista_valores]
     return [min(valores), max(valores)]
+
 
 # variables -> diccionario que tiene como keys los nombres de las variables
 # n_variable -> nombre de la variable a usar
@@ -57,11 +59,12 @@ def triangular(x, rango):
 def trapezoidal(x, rango):
     if x < rango[0]:
         return 0.0
-    if x <= rango[1]:
+    
+    if x <= rango[1] and (rango[1] - rango[0]) != 0:
         return (x - rango[0]) / (rango[1] - rango[0])
     elif x <= rango[2]:
         return 1
-    elif x <= rango[3]:
+    elif x <= rango[3] and (rango[3]-rango[2]) != 0:
         return (rango[3] - x) / (rango[3]-rango[2])
     else:
         return 0.0
@@ -128,7 +131,6 @@ def calcular_centroide(pertenencia, rangos):
 
 
 def salida_cualitativa(func_membresia):
-    print("func membresia" , func_membresia)
     max_value = max(list(func_membresia.values()))
     for clave, valor in func_membresia.items():
 
