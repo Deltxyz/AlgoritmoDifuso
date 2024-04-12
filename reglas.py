@@ -1,3 +1,4 @@
+# Macro Tuneles
 error_humedad={
     'B': 'H',
     'Min': 'OFF',
@@ -40,8 +41,7 @@ error_temperatura_sombra={
         'MA':'Q'}
 }
 
-
-
+# Invernadero
 error_humedad1 = {
     'MB' : 'HG',
     'B' : 'HP',
@@ -83,8 +83,7 @@ error_temperatura1 = {
         'MB' : 'SG'},
 }
 
-
-
+# Agua y sustratos
 error_ph = {
     'M-Ac' : 'Bas-A',
     'Mod-Ac' : 'Bas-Mod',

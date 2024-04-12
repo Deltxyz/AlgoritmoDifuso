@@ -1,5 +1,6 @@
 macro_tuneles = {
     'func_membresia':{
+        # ENTRADA
         'Error de humedad': {
             'B':'Bajo',
             'Min':'Minimo',
@@ -13,7 +14,7 @@ macro_tuneles = {
             'DH':'Deshumidificación',
             'OFF':'OFF',
             'H':'Humidificación'},
-
+        #SALIDA
         'Control de Humedad':{
             'DH':'Deshumidificación',
             'OFF':'OFF',
@@ -29,6 +30,7 @@ macro_tuneles = {
             'C': 'Colocar'}
     },
     'parametros':{
+        # ENTRADA
         'Error de humedad': {
             'B':[-70, -70, -15, 0],
             'Min':[-15, 0, 15],
@@ -42,7 +44,7 @@ macro_tuneles = {
             'DH':[-1, -1, 0],
             'OFF':[-0.8, 0, 0.8],
             'H':[0, 1, 1]},
-
+        #SALIDA
         'Control de Humedad':{
             'DH':[-1, -1, 0],
             'OFF':[-0.8, 0, 0.8],
@@ -62,6 +64,7 @@ macro_tuneles = {
 
 invernadero = {
     'func_membresia':{
+        # ENTRADA
         'Error de humedad': {
             'MA':'Muy Alto',
             'A':'Alto',
@@ -80,7 +83,7 @@ invernadero = {
             'M':'Mantener',
             'DHP':'Des-Humidificación Pequeña',
             'DHG':'Des-Humidificación Grande'},
-
+        #SALIDA
         'Control de Humedad':{
             'HumG':'Humidificación Grande',
             'HumP':'Humidificación Pequeña',
@@ -95,6 +98,7 @@ invernadero = {
             'BG': 'Bajada Grande'},
     },
     'parametros':{
+        # ENTRADA
         'Error de humedad': {
             'MA':[10, 30, 30],
             'A':[0, 10, 30],
@@ -113,7 +117,7 @@ invernadero = {
             'M':[-50, 0, 50],
             'DHP':[-100, -50, 0],
             'DHG':[-100, -100, -50]},
-
+        #SALIDA
         'Control de Humedad':{
             'HG':[50, 100, 100],
             'HP':[0, 50, 100],
@@ -131,6 +135,7 @@ invernadero = {
 
 agua_sustratos = {
     'func_membresia':{
+        # ENTRADA
         'Error de pH': {
             'M-Ac':'Muy Ácido',
             'Mod-Ac':'Moderadamente Ácido',
@@ -146,7 +151,7 @@ agua_sustratos = {
             'A':'Alta',
             'MA':'Muy Alta',
             'EA':'Extremadamente Alta'},
-
+        #SALIDA
         'Control de pH':{
             'Bas-A':'Basificación Alta',
             'Bas-Mod':'Basificación Moderada',
@@ -164,6 +169,7 @@ agua_sustratos = {
             'SM': 'Subida Moderada'},
     },
     'parametros':{
+        # ENTRADA
         'Error de pH': {
             'M-Ac':[-7, -4, -2.5],
             'Mod-Ac':[-4, -2.5, -1],
@@ -179,7 +185,7 @@ agua_sustratos = {
             'A':[0, 1.5, 3],
             'MA':[1.5, 3, 4.5],
             'EA':[3, 4.5, 4.5]},
-
+        #SALIDA
         'Control de pH':{
             'Bas-A':[ 60, 100, 100],
             'Bas-Mod':[30, 60, 100],
