@@ -627,18 +627,6 @@ Se propone el desarrollo de un sistema difuso para el control y monitoreo de la 
 
 <table style="text-align: center;">
   <tr>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
-    <td rowspan="2"></td>
     <td>Ventilacion</td>
   </tr>
   <tr>
