@@ -54,19 +54,7 @@ def submenu_macrotuneles():
 
         match opcion:
             case 1:
-                print("=== Variables ===")
-                for key, value in variables.items():
-                    print(f"{key}. {value}")
-                print('7. Regresar al Menu de macrotuneles')
-                variable = int(input('Elegir Variable: '))
-
-                match variable:
-                    case range(1,7):
-                        graficar_func_pertenencia(macro_tuneles, variables[variable])
-                    case 7:
-                        break
-                    case _:
-                        print('Opcion no valida')
+                variables_submenu(macro_tuneles)
             case 2:
                 humedad = float(input('Ingrese Humedad: '))
                 temperatura = float(input('Ingrese Temperatura: '))
@@ -79,14 +67,6 @@ def submenu_macrotuneles():
 
 
 def submenu_invernadero():
-    variables = {
-        1: 'Error de humedad',
-        2: 'Error de temperatura',
-        3: 'Control de estado de humedad',
-        4: 'Control de Humedad',
-        5: 'Control de Temperatura'
-    }
-
     while True:
         print("=== Menú Invernadero ===")
         print('1. Graficar')
@@ -97,20 +77,7 @@ def submenu_invernadero():
 
         match opcion:
             case 1:
-                print("=== Variables ===")
-                for key, value in variables.items():
-                    print(f"{key}. {value}")
-                print('6. Salir')
-                variable = int(input('Elegir Variable: '))
-                print()
-
-                match variable:
-                    case range(1,6):
-                        graficar_func_pertenencia(invernadero, variables[variable])
-                    case 6:
-                        break
-                    case _:
-                        print('Opcion no valida')
+                variables_submenu(invernadero)
             case 2:
                 humedad = float(input('Ingrese Humedad: '))
                 temperatura = float(input('Ingrese Temperatura: '))
@@ -123,12 +90,6 @@ def submenu_invernadero():
 
 
 def submenu_agua_sustratos():
-    variables = {
-        1: 'Error de pH',
-        2: 'Error de Conductividad',
-        3: 'Control de pH',
-        4: 'Control de CE'
-    }
     while True:
         print("=== Menú Agua Sustratos ===")
         print('1. Graficar')
@@ -139,20 +100,7 @@ def submenu_agua_sustratos():
 
         match opcion:
             case 1:
-                print("=== Variables ===")
-                for key, value in variables.items():
-                    print(f"{key}. {value}")
-                print('5. Salir')
-                variable = int(input('Elegir Variable: '))
-                print()
-
-                match variable:
-                    case range(1,5):
-                        graficar_func_pertenencia(agua_sustratos, variables[variable])
-                    case 5:
-                        break
-                    case _:
-                        print('Opcion no valida')
+                variables_submenu(agua_sustratos)
             case 2:
                 ph = float(input('Ingrese pH: '))
                 ce = float(input('Ingrese Error Conductividad: '))
@@ -162,5 +110,19 @@ def submenu_agua_sustratos():
             case _:
                 print('Opcion no valida')
 
+
+def variables_submenu(modulo):
+    variables = list(modulo['func_membresia'].keys())
+    print("=== Variables ===")
+    for index, value in enumerate(variables):
+        print(f'{index+1}. {value}')
+    variable = int(input('Elegir Variable: '))
+    print()
+
+    match variable:
+        case val if val in range(1, len(variables)+1):
+            graficar_func_pertenencia(modulo, variables[variable-1])
+        case _:
+            print('Opción no válida')
 
 menu_principal()
